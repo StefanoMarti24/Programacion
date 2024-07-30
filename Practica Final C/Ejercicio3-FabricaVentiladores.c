@@ -4,9 +4,9 @@
 De  un  determinado  mes,  se  conoce  la  cantidad  de  días  laborables  que  hubo  y  de  cada  día
 laborable del mismo se tiene, sin orden alguno, las siguientes ternas de datos: número del día,
 turno y cantidad de ventiladores producidos.(5 dias habiles, 3 turnos = 15 ternas)
-Se pide procesar la información correspondiente a un determinado mes para conocer:
-    ● En qué día y en qué turno se produjeron más ventiladores.
-    ● En qué día y en qué turno se hicieron menos ventiladores.
+// Se pide procesar la información correspondiente a un determinado mes para conocer:
+//     ● En qué día y en qué turno se produjeron más ventiladores.
+//     ● En qué día y en qué turno se hicieron menos ventiladores.
 // Tener en cuenta que es necesario validar la consistencia del número de día (valor entero que
 // pertenezca al intervalo [1, 31]) y la codificación del turno (letras M, T o N).
 */
@@ -80,12 +80,27 @@ void ingresoDatos(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
     }
     return;
 }
+// Mostrar ingreso de datos
+void mostrarDatos(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
+{
+    int i = 0;
+    printf("\t Registro de dias");
+    while (i < FI && dias[i][0] != 0)
+    {
+        printf("\n El dia %d, en el turno %c se produjeron %d ventiladores", dias[i][0], turno[i][1], ventiladores[i][2]);
+        i++;
+    }
+
+}
+
 // Declaracion de la funcion para sacar el mayor turno
 int mayorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
 {
+    system("pause");
+    system("cls");
     int maxDia = 0, maxTurno = 0;
     int i = 0;
-    int max;
+    int max = 0;
     while (i < FI && dias[i][0] != 0)
     {
         if (ventiladores[i][2] > max)
@@ -96,9 +111,11 @@ int mayorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
         }
         i++;
     }
-    printf("\n El dia %d en el turno %c se produjeron mas ventiladores", maxDia, maxTurno);
-    return max;
+    printf("\t Mayor Turno");
+    printf("\nEl dia %d en el turno %c se produjeron mas ventiladores. Cantidad: %d\n", maxDia, maxTurno,max);
+    return 0;
 }
+// Declaracion de la funcion para sacar el menor turno
 int menorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
 {
     int minDia = 0, minTurno = 0;
@@ -114,17 +131,7 @@ int menorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
         }
         i++;
     }
-    printf("\n El dia %d en el turno %c se produjeron menos ventiladores", minDia, minTurno);
-    return min;
-}
-void mostrarDatos(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
-{
-    int i = 0;
-    while (i < FI && dias[i][0] != 0)
-    {
-        printf("\nDia: %d", dias[i][0]);
-        printf("\nTurno: %c", turno[i][1]);
-        printf("\nCantidad Productida de ventiladores: %d", ventiladores[i][2]);
-        i++;
-    }
+    printf("\t Menor Turno");
+    printf("\n El dia %d en el turno %c se produjeron menos ventiladores. Cantidad: %d\n", minDia, minTurno, min);
+    return 0;
 }
