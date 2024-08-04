@@ -30,7 +30,6 @@ void mostrarDatos(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
 void main()
 {
     int dias[FI][CO], turno[FI][CO], ventiladores[FI][CO]; // Variables de trabajo
-    int max, min;
 
     // invoco funciones
     ingresoDatos(dias, turno, ventiladores);
