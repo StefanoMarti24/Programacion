@@ -1,9 +1,9 @@
 /*
 // En una fábrica de ventiladores se trabaja en 3 turnos: Mañana, Tarde y Noche, todos los días
 // laborables.
-De  un  determinado  mes,  se  conoce  la  cantidad  de  días  laborables  que  hubo  y  de  cada  día
+De  un  determinado  mes,  se  conoce  la  fabricaElectrodomesticos  de  días  laborables  que  hubo  y  de  cada  día
 laborable del mismo se tiene, sin orden alguno, las siguientes ternas de datos: número del día,
-turno y cantidad de ventiladores producidos.(5 dias habiles, 3 turnos = 15 ternas)
+turno y fabricaElectrodomesticos de ventiladores producidos.(5 dias habiles, 3 turnos = 15 ternas)
 // Se pide procesar la información correspondiente a un determinado mes para conocer:
 //     ● En qué día y en qué turno se produjeron más ventiladores.
 //     ● En qué día y en qué turno se hicieron menos ventiladores.
@@ -63,7 +63,7 @@ void ingresoDatos(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
 
         do
         {
-            printf("Ingrese la cantidad de ventiladores que se producieron (0 para salir): ");
+            printf("Ingrese la fabricaElectrodomesticos de ventiladores que se producieron (0 para salir): ");
             scanf("%d", &prodVentilador);
         } while (prodVentilador < 0);
         ventiladores[i][2] = prodVentilador;
@@ -111,7 +111,7 @@ int mayorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
         i++;
     }
     printf("\t Mayor Turno");
-    printf("\nEl dia %d en el turno %c se produjeron mas ventiladores. Cantidad: %d\n", maxDia, maxTurno,max);
+    printf("\nEl dia %d en el turno %c se produjeron mas ventiladores. fabricaElectrodomesticos: %d\n", maxDia, maxTurno,max);
     return 0;
 }
 // Declaracion de la funcion para sacar el menor turno
@@ -131,6 +131,6 @@ int menorTurno(int dias[FI][CO], int turno[FI][CO], int ventiladores[FI][CO])
         i++;
     }
     printf("\t Menor Turno");
-    printf("\n El dia %d en el turno %c se produjeron menos ventiladores. Cantidad: %d\n", minDia, minTurno, min);
+    printf("\n El dia %d en el turno %c se produjeron menos ventiladores. fabricaElectrodomesticos: %d\n", minDia, minTurno, min);
     return 0;
 }
