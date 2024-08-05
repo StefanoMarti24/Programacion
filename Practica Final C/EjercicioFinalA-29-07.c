@@ -123,6 +123,7 @@ void ingresoDiario(int fabricaElectrodomesticos[PRODUCTO][PERIODO])
             printf("Ingrese la cantidad de refrigeradores: ");
             scanf("%d", &refrigeradores);
             fabricaElectrodomesticos[0][0] = refrigeradores;
+            
             break;
         case 2:
             printf("Ingrese la cantidad de lavadoras: ");
